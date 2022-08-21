@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+       <h1>Avançando nos estudos</h1>
+    </header>
+
+    <section class="addtarefa">
+        <p>adicione sua tarefa:</p>
+        <input type="text" id="addtarefa" class="addtarefa" placeholder="o que você vai fazer?">
+        <button onclick="adicionar()">+</button>
+    </section>
+
+    <section class="pesquisar">
+        <p>pesquisar:</p>
+        <input type="text" id="pesquisar" placeholder="Buscar">
+        <select name="" id="filtro">
+            <option value="todos">Todos</option>
+            <option value="feitas">Atividades Feitas</option>
+            <option value="Fazer">Atividades a Fazer</option>
+            <button onclick="pesquisar()">Pesquisar</button>
+        </select>
+    </section>
+    <section id="res">
+        <h2>Tarefas adicionadas</h2>
+        <div id="btn"></div>
+    </section>
+</body>
+</html>
