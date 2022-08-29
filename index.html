@@ -12,26 +12,32 @@
     <header>
        <h1>Avançando nos estudos</h1>
     </header>
+    
+        <section class="addtarefa">
+            <p>adicione sua tarefa:</p>
+            <input type="text" id="addtarefa" class="addtarefa" placeholder="o que você vai fazer?">
+            <button onclick="adicionar()">+</button>
+        </section>
 
-    <section class="addtarefa">
-        <p>adicione sua tarefa:</p>
-        <input type="text" id="addtarefa" class="addtarefa" placeholder="o que você vai fazer?">
-        <button onclick="adicionar()">+</button>
-    </section>
-
-    <section class="pesquisar">
-        <p>pesquisar:</p>
-        <input type="text" id="pesquisar" placeholder="Buscar">
-        <select name="" id="filtro">
-            <option value="todos">Todos</option>
-            <option value="feitas">Atividades Feitas</option>
-            <option value="Fazer">Atividades a Fazer</option>
-            <button onclick="pesquisar()">Pesquisar</button>
-        </select>
-    </section>
-    <section id="res">
-        <h2>Tarefas adicionadas</h2>
-        <div id="btn"></div>
-    </section>
+        <section class="pesquisar">
+            <p>pesquisar:</p>
+            <input type="text" id="pesquisar" placeholder="Buscar">
+            <select name="" id="filtro">
+                <option value="todos">Todos</option>
+                <option value="feitas">Atividades Feitas</option>
+                <option value="Fazer">Atividades a Fazer</option>
+                <button onclick="pesquisar()">Pesquisar</button>
+            </select>
+        </section>
+        <section id="res">
+            <h2>Tarefas adicionadas</h2>
+            <div id="btn" class="atvFeita">
+                <div class="item">
+                    <span>atvfeuta</span>
+                    <button class="btn1">✔</button>
+                    <button class="btn2">❌</button>
+                </div>
+            </div>
+        </section>
 </body>
 </html>

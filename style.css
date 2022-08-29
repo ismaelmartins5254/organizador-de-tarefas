@@ -37,11 +37,6 @@ button{
 
 .btn1, .btn2{
     margin-left: 1vw;
-    width: 3vw;
-    height: 3vh;
-    margin-top: -15vh;  
-    
-
 }
 
 
@@ -58,4 +53,20 @@ button{
 #btn{
     text-align: center;
     align-items: center;
+}
+
+.item{
+    background-color: #2147af;
+    margin:0  auto;
+    color:#fff;
+    width:80vw;
+    
+}
+
+.item > span{
+    margin-right: 35vw;
+}
+
+.feito{
+    background-color:#3969ec;
 }
