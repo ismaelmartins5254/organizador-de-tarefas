@@ -42,14 +42,15 @@ function adicionar(){
 }
 
 document.addEventListener('click', (e) => {
-    let targetEl = e.target
+    let targetEl = e.target //retorna o elemento que acionou o evento
     let parent = targetEl.closest("div") //elemento pai mais perto
+    e.preventDefault() //cancelar envio do Form
 
     if(targetEl.classList.contains('btn1')){  //se clicar no botao com class btn1
         parent.classList.toggle('feito') //toggle tira ou coloca a class 
 
     }else if(targetEl.classList.contains('btn2')){
-        
-        arrTodos.splice(arrTodos.indexOf(targetEl)) //remover item do array 
-    } 
+        arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
+        parent.remove()
+    }
 })
