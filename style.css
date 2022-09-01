@@ -1,23 +1,30 @@
 *{
     padding: 0;
     margin: 0;
-
+    outline: 0; /*remover borda ao clicar*/
 }
 
 body{
-    background-color: #4271f0;
+    background-color: #072988;
     text-align: center;
     align-items: center;
+    color: #fff;
 }
 
 header{
     border-bottom: 0.5px solid #b3b2b2;
+    
+}
+
+h1{
+    margin-top: 5vh;
 }
 
 section:not(#res){
+    margin: 12vh;
+    height: 11vh;
     border-bottom: 0.5px solid #b3b2b2;
-    margin: 15vh;
-    height: 15vh;
+
 }
 
 input{
@@ -30,13 +37,14 @@ input{
 button{
     border: none;
     width: 5vw;
+   
     border-radius: 2px;   
     cursor: pointer;
-    
 }
 
 .btn1, .btn2{
-    margin-left: 1vw;
+    margin-left: 1vw; 
+    height: 4vh;
 }
 
 
@@ -53,23 +61,34 @@ button{
 #btn{
     text-align: center;
     align-items: center;
+    margin-top: 2vh;
 }
 
 .item{
     background-color: #2147af;
-    margin:0  auto;
+    margin:0 auto;
     color:#fff;
     width:80vw;
     border-radius: 3px;
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid gray;
 }
 
 .item > span{
-    margin-right: 35vw;
+    width: 29vw;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .feito{
-    background-color:#3969ec;
+    background-color:#1c3f9c;
     
 }
 

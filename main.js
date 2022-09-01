@@ -17,7 +17,8 @@ function adicionar(){
     }else{
         arrTodos.push(tarefa.value)
         item = document.createElement('span')
-        item.innerHTML = `<br>${tarefa.value}`
+        item.innerHTML = `${tarefa.value}`
+        item.classList.add('texto')
         btn = document.createElement('button') //botao para marcar como feito
         btn.classList.add('btn1')
         btn.innerHTML = '✔'
@@ -43,11 +44,11 @@ function adicionar(){
 
 document.addEventListener('click', (e) => {
     let targetEl = e.target //retorna o elemento que acionou o evento
-    let parent = targetEl.closest("div") //elemento pai mais perto
-    e.preventDefault() //cancelar envio do Form
+    let parent = targetEl.closest("div") //procura o elemento pai mais perto
+    e.preventDefault() //cancelar envio do Form *Não necessário nesse caso :)*
 
-    if(targetEl.classList.contains('btn1')){  //se clicar no botao com class btn1
-        parent.classList.toggle('feito') //toggle tira ou coloca a class 
+    if(targetEl.classList.contains('btn1')){  //se clicar no botao com class= btn1
+        parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
 
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
