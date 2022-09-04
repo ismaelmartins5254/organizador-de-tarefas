@@ -95,3 +95,8 @@ button{
 .feito > span{
     text-decoration: line-through;
 }
+
+.pesq{
+    width: 15vw;
+    height: 3vh;
+}

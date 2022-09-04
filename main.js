@@ -1,14 +1,14 @@
 var arrTodos = []
 var arrFeito = []
 var arrAfazer = []
-var item 
-var btnE
-var btn
-let div
 
 function adicionar(){
     var tarefa = document.getElementById('addtarefa')
     var botao = document.getElementById('btn')
+    window.item 
+    window.btnE
+    window.btn
+    window.div
 
     if (tarefa.value == 0) {
         alert('Escreva uma tarefa antes de adicionar')
@@ -42,16 +42,42 @@ function adicionar(){
     tarefa.value = ''
 }
 
+
 document.addEventListener('click', (e) => {
     let targetEl = e.target //retorna o elemento que acionou o evento
-    let parent = targetEl.closest("div") //procura o elemento pai mais perto
+    window.parent = targetEl.closest("div") //procura o elemento pai mais perto
+    window.texto = document.getElementsByClassName('texto')
+    
     e.preventDefault() //cancelar envio do Form *Não necessário nesse caso :)*
-
+    
     if(targetEl.classList.contains('btn1')){  //se clicar no botao com class= btn1
         parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
-
+        arrFeito.push(texto)
+       
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
+        res.innerHTML += ''
+        arrFeito.splice(arrFeito.indexOf(targetEl))
     }
 })
+
+function pesquisar(){
+    if (parent.classList.contains('feito')) {
+        var select = document.getElementById('filtro')
+        window.res = document.getElementById('res')
+        let itemSelect = select.options[select.selectedIndex].text
+        
+        if (itemSelect == 'Atividades Feitas') {
+            for(let i = 0; i< texto.length; i++){
+                console.log(texto.item(i))  
+                res.innerHTML += texto.item(i)
+            }
+            console.log(arrFeito)
+        }
+    }else{
+        console.log('loop')
+    }
+    
+}
+
