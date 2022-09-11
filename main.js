@@ -42,18 +42,20 @@ function adicionar(){
     tarefa.value = ''
 }
 
+//inicio das functions dos botões
+
 
 document.addEventListener('click', (e) => {
     let targetEl = e.target //retorna o elemento que acionou o evento
     window.parent = targetEl.closest("div") //procura o elemento pai mais perto
-    window.texto = document.getElementsByClassName('texto')
     
     e.preventDefault() //cancelar envio do Form *Não necessário nesse caso :)*
     
     if(targetEl.classList.contains('btn1')){  //se clicar no botao com class= btn1
         parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
-        arrFeito.push(texto)
-       
+        
+        arrFeito.push(parent)
+        
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
@@ -69,11 +71,21 @@ function pesquisar(){
         let itemSelect = select.options[select.selectedIndex].text
         
         if (itemSelect == 'Atividades Feitas') {
-            for(let i = 0; i< texto.length; i++){
-                console.log(texto.item(i))  
-                res.innerHTML += texto.item(i)
+            for(window.i = 0; i< parent.length; i++){
+                console.log(parent.item(i))
+                res.innerHTML += parent.item(i)
+                console.log(arrFeito[i])
             }
-            console.log(arrFeito)
+            const iterator1 = arrFeito[Symbol.iterator]();
+
+            for (const value of iterator1) {
+                console.log(value);
+                res.innerHTML += value.value
+            }
+            
+            arrFeito[Symbol.iterator]()
+            //res.innerHTML += arrFeito.value
+            console.log(arrFeito) 
         }
     }else{
         console.log('loop')
