@@ -77,16 +77,6 @@ button{
     border-bottom: 0.5px solid gray;
 }
 
-.item > span{
-    width: 29vw;
-    height: 5vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
-}
-
 .feito{
     background-color:#1c3f9c;
     
@@ -99,4 +89,17 @@ button{
 .pesq{
     width: 15vw;
     height: 3vh;
+}
+
+.texto{
+    width: 29vw;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#res{
+    display: none;
 }

@@ -1,14 +1,16 @@
 var arrTodos = []
 var arrFeito = []
 var arrAfazer = []
+var item 
+var btnE
+var btn
+var div
+
 
 function adicionar(){
     var tarefa = document.getElementById('addtarefa')
     var botao = document.getElementById('btn')
-    window.item 
-    window.btnE
-    window.btn
-    window.div
+    
 
     if (tarefa.value == 0) {
         alert('Escreva uma tarefa antes de adicionar')
@@ -19,6 +21,7 @@ function adicionar(){
         item = document.createElement('span')
         item.innerHTML = `${tarefa.value}`
         item.classList.add('texto')
+        item.id = 'i'
         btn = document.createElement('button') //botao para marcar como feito
         btn.classList.add('btn1')
         btn.innerHTML = '✔'
@@ -34,17 +37,17 @@ function adicionar(){
         div.appendChild(item)
         div.appendChild(btn)
         div.appendChild(btnE)
-
-
-       
+           
     }
     tarefa.focus()
     tarefa.value = ''
+    localStorage.setItem('item', item.innerHTML)
+    localStorage.setItem('btn', btn.innerHTML)
+    localStorage.setItem('btnE', btnE.innerHTML)
 }
 
-//inicio das functions dos botões
 
-
+//inicio das functions dos botões 
 document.addEventListener('click', (e) => {
     let targetEl = e.target //retorna o elemento que acionou o evento
     window.parent = targetEl.closest("div") //procura o elemento pai mais perto
@@ -53,43 +56,74 @@ document.addEventListener('click', (e) => {
     
     if(targetEl.classList.contains('btn1')){  //se clicar no botao com class= btn1
         parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
-        
-        arrFeito.push(parent)
-        
+        arrFeito.push(parent.innerHTML)
+        localStorage.setItem('arrFeito', arrFeito)
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
-        res.innerHTML += ''
         arrFeito.splice(arrFeito.indexOf(targetEl))
+        res.innerHTML = ''
+        
     }
 })
 
+//function de busca
+
 function pesquisar(){
-    if (parent.classList.contains('feito')) {
-        var select = document.getElementById('filtro')
-        window.res = document.getElementById('res')
-        let itemSelect = select.options[select.selectedIndex].text
+    var span = document.getElementById('span')
+    var select = document.getElementById('filtro')
+        var res = document.getElementById('res')
+        res.style.display = 'block'
+        let itemSelect = select.options[select.selectedIndex].text //pegar valor do select
+
+        switch (itemSelect) {
+            case 'Atividades Feitas':
+                console.log(arrFeito) 
+                let item = localStorage.getItem('item')
+                let btnE = localStorage.getItem('btnE')
+                let btn = localStorage.getItem('btn')
+                console.log(`oi ${item + btnE + btn}`)
+                console.log(`ola ${btnE}`)
+                console.log(`hello ${btn}`)
+                
+                res.innerHTML += arrFeito
+                console.log(arrFeito)
+            
+                break;
+
+            case 'Todos': 
+                alert("todos")
+                break
+            
+            case 'Atividades a Fazer':
+                alert('Atividades a Fazer')
+                break
+        
+            default:
+                alert('loop')
+                break;
+        }
         
         if (itemSelect == 'Atividades Feitas') {
-            for(window.i = 0; i< parent.length; i++){
-                console.log(parent.item(i))
-                res.innerHTML += parent.item(i)
-                console.log(arrFeito[i])
-            }
-            const iterator1 = arrFeito[Symbol.iterator]();
-
-            for (const value of iterator1) {
-                console.log(value);
-                res.innerHTML += value.value
-            }
-            
-            arrFeito[Symbol.iterator]()
-            //res.innerHTML += arrFeito.value
             console.log(arrFeito) 
-        }
-    }else{
-        console.log('loop')
-    }
-    
-}
+            let item = localStorage.getItem('item')
+            let btnE = localStorage.getItem('btnE')
+            let btn = localStorage.getItem('btn')
+            let arrFeit = localStorage.getItem('arrFeito')
+            //⬇ recriando os itens pra ficar bunutin :) e funcional
+            let div = document.createElement('div')
+            div.classList.add('feito')
+            let texto = document.createElement('span')
+            let btn1 = document.createElement('button')
+            let btn2 = document.createElement('button')
+            
+            res.innerHTML = `${arrFeit} teste com array`
+            texto.innerHTML = item
+            btn1.innerHTML = btn
+            btn2.innerHTML = btnE
+            res.appendChild(div)
 
+            div.appendChild(arrFeito)
+            console.log(arrFeit)
+        }
+}
