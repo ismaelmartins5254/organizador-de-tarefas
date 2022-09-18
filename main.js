@@ -70,60 +70,45 @@ document.addEventListener('click', (e) => {
 //function de busca
 
 function pesquisar(){
-    var span = document.getElementById('span')
     var select = document.getElementById('filtro')
-        var res = document.getElementById('res')
-        res.style.display = 'block'
-        let itemSelect = select.options[select.selectedIndex].text //pegar valor do select
+    var res = document.getElementById('res')
+    res.style.display = 'block'
+    let itemSelect = select.options[select.selectedIndex].text //pegar valor do select
 
-        switch (itemSelect) {
-            case 'Atividades Feitas':
-                console.log(arrFeito) 
-                let item = localStorage.getItem('item')
-                let btnE = localStorage.getItem('btnE')
-                let btn = localStorage.getItem('btn')
-                console.log(`oi ${item + btnE + btn}`)
-                console.log(`ola ${btnE}`)
-                console.log(`hello ${btn}`)
-                
-                res.innerHTML += arrFeito
-                console.log(arrFeito)
-            
-                break;
+    let item = localStorage.getItem('item')
+    let btnE = localStorage.getItem('btnE')
+    let btn = localStorage.getItem('btn')
+    console.log(`oi ${item + btnE + btn}`)
+    console.log(`ola ${btnE}`)
+    console.log(`hello ${btn}`)
 
-            case 'Todos': 
-                alert("todos")
-                break
-            
-            case 'Atividades a Fazer':
-                alert('Atividades a Fazer')
-                break
-        
-            default:
-                alert('loop')
-                break;
-        }
-        
-        if (itemSelect == 'Atividades Feitas') {
-            console.log(arrFeito) 
-            let item = localStorage.getItem('item')
-            let btnE = localStorage.getItem('btnE')
-            let btn = localStorage.getItem('btn')
-            let arrFeit = localStorage.getItem('arrFeito')
-            //⬇ recriando os itens pra ficar bunutin :) e funcional
+    switch (itemSelect) {
+        case 'Atividades Feitas':
             let div = document.createElement('div')
-            div.classList.add('feito')
-            let texto = document.createElement('span')
-            let btn1 = document.createElement('button')
-            let btn2 = document.createElement('button')
-            
-            res.innerHTML = `${arrFeit} teste com array`
-            texto.innerHTML = item
-            btn1.innerHTML = btn
-            btn2.innerHTML = btnE
+            let span = document.createElement('span')
+            span.innerHTML = item
+            let buttonF = document.createElement('button')
+            buttonF.innerHTML = btnE
+            let buttonC = document.createElement('button')
+            buttonC.innerHTML = btn
             res.appendChild(div)
+            div.appendChild(span)
+            div.appendChild(buttonC)
+            div.appendChild(buttonF)
+            
+            break;
 
-            div.appendChild(arrFeito)
-            console.log(arrFeit)
-        }
+        case 'Todos': 
+            alert("todos")
+            break
+            
+         case 'Atividades a Fazer':
+            alert('Atividades a Fazer')
+            break
+        
+        default:
+            alert('loop')
+            break;
+    }
+        
 }
