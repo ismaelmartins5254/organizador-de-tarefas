@@ -9,6 +9,7 @@ var btn
 var div
 
 
+
 function adicionar(){
     var tarefa = document.getElementById('addtarefa')
     var botao = document.getElementById('btn')
@@ -65,6 +66,7 @@ document.addEventListener('click', (e) => { //hora de codar
         localStorage.setItem('btn', btn.innerHTML)
         localStorage.setItem('btnE', btnE.innerHTML)
         localStorage.setItem('arrFeito', arrFeito)
+        localStorage.setItem('arrSalvo', arrTodos)
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
@@ -93,16 +95,10 @@ function pesquisar(){
         case 'Atividades Feitas':
             let div = document.createElement('div')
             let span = document.createElement('span')
-            span.innerHTML = item
-            let buttonF = document.createElement('button')
-            buttonF.innerHTML = btnE
-            let buttonC = document.createElement('button')
-            buttonC.innerHTML = btn
+            span.innerHTML = arrFeito
             res.appendChild(div)
             div.appendChild(span)
-            div.appendChild(buttonC)
-            div.appendChild(buttonF)
-            
+            //res.innerHTML += arrFeito
             break;
 
         case 'Todos': 
