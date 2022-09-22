@@ -86,16 +86,10 @@ function pesquisar(){
         case 'Atividades Feitas':
             let div = document.createElement('div')
             let span = document.createElement('span')
-            span.innerHTML = item
-            let buttonF = document.createElement('button')
-            buttonF.innerHTML = btnE
-            let buttonC = document.createElement('button')
-            buttonC.innerHTML = btn
+            span.innerHTML = localStorage.getItem('arrFeito')
             res.appendChild(div)
             div.appendChild(span)
-            div.appendChild(buttonC)
-            div.appendChild(buttonF)
-            
+            /*lfe*/
             break;
 
         case 'Todos': 
