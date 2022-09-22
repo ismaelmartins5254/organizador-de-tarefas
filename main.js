@@ -47,7 +47,7 @@ function adicionar(){
 }
 
 
-//inicio das functions dos botões 
+//inicio das funções dos botões 
 document.addEventListener('click', (e) => {
     let targetEl = e.target //retorna o elemento que acionou o evento
     window.parent = targetEl.closest("div") //procura o elemento pai mais perto
@@ -58,6 +58,7 @@ document.addEventListener('click', (e) => {
         parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
         arrFeito.push(parent.innerHTML)
         localStorage.setItem('arrFeito', arrFeito)
+        localStorage.setItem('arrSalvo', )
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
@@ -67,7 +68,7 @@ document.addEventListener('click', (e) => {
     }
 })
 
-//function de busca
+//função de busca
 
 function pesquisar(){
     var select = document.getElementById('filtro')
@@ -86,10 +87,9 @@ function pesquisar(){
         case 'Atividades Feitas':
             let div = document.createElement('div')
             let span = document.createElement('span')
-            span.innerHTML = localStorage.getItem('arrFeito')
+            span.innerHTML = localStorage.getItem('arrSalvo')
             res.appendChild(div)
             div.appendChild(span)
-            /*lfe*/
             break;
 
         case 'Todos': 
