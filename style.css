@@ -5,11 +5,10 @@
 }
 
 body{
-    background-image: linear-gradient(50deg, #70C2E0 0%, #69EEFA 46%, #5DF0DE 100%);
+    background: linear-gradient(50deg, #70C2E0 0%, #69EEFA 46%, #5DF0DE 100%);
     text-align: center;
     align-items: center;
     color: #313030;
-    height: 95vh;
 
 }
 
@@ -80,7 +79,7 @@ button{
 }
 
 .feito{
-    background-color:#69EEFA;
+    background-color:#69eefa71;
     color: #000;
     
 }

@@ -11,15 +11,19 @@ function pesquisar(){
             
         case 'Todos': 
             res.innerHTML = localStorage.getItem('arrTodos')
-            div.appendChild(span)
             break
             
          case 'Atividades a Fazer':
-            alert('Atividades a Fazer')
+            let feito = localStorage.getItem('arrFeito_sRep')
+            let todos = localStorage.getItem('arrTodos')
+            let aFazer = feito + todos
+         
+            res.innerHTML = aFazer
+
             break
         
         default:
-            alert('loop')
+            alert('ERRO[]')
             break;
     }
 }
