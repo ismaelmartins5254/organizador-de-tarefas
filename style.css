@@ -5,10 +5,12 @@
 }
 
 body{
-    background-color: #072988;
+    background-image: linear-gradient(50deg, #70C2E0 0%, #69EEFA 46%, #5DF0DE 100%);
     text-align: center;
     align-items: center;
-    color: #fff;
+    color: #313030;
+    height: 95vh;
+
 }
 
 header{
@@ -49,7 +51,8 @@ button{
 
 
 .btn1:hover, .btn2:hover{
-    background-color: #2956d348;
+    background-color: #70C2E0;
+    color: #000;
 }
 
 #btn > span{
@@ -65,9 +68,8 @@ button{
 }
 
 .item{
-    background-color: #2147af;
     margin:0 auto;
-    color:#fff;
+    color: #000;
     width:80vw;
     border-radius: 3px;
     display: flex;
@@ -78,13 +80,15 @@ button{
 }
 
 .feito{
-    background-color:#1c3f9c;
+    background-color:#69EEFA;
+    color: #000;
     
 }
 
 .feito > span{
     text-decoration: line-through;
 }
+
 
 .pesq{
     width: 15vw;
@@ -102,16 +106,14 @@ button{
 
 #res{
     display: none;
+    margin-top: 5vh;
 }
 
-.item-feito{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    height: 0;
-}
-
-.item-feito > button{
+#res > button{
     display: none;
+}
+
+#res > span{
+    display: contents;
     
 }

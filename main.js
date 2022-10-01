@@ -37,7 +37,8 @@ function adicionar(){
         div.appendChild(item)
         div.appendChild(btn)
         div.appendChild(btnE)
-        localStorage.setItem('arrTodos', arrTodos)
+        let arrTodos_sRep = [... new Set(arrTodos)]
+        localStorage.setItem('arrTodos', arrTodos_sRep)
     }
     tarefa.focus()
     tarefa.value = ''
@@ -56,8 +57,15 @@ document.addEventListener('click', (e) => {
     
     if(targetEl.classList.contains('btn1')){  //se clicar no botao com class= btn1
         parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
-        arrFeito.push(parent.innerHTML)
-        localStorage.setItem('arrFeito', arrFeito)
+
+        if(parent.classList.contains('feito')){
+            arrFeito.push(parent.innerHTML)
+        }else {
+            if(arrFeito.indexOf(parent)) arrFeito.splice(arrFeito.indexOf(arrFeito))
+        }
+
+        let arrFeito_sRep = [... new Set(arrFeito)]
+        localStorage.setItem('arrFeito_sRep', arrFeito_sRep)
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
@@ -66,11 +74,8 @@ document.addEventListener('click', (e) => {
         
     }
 })
-
-
-//função de busca
-
-
+/*
 function remover_LS(){
     localStorage.removeItem('arrFeito')
 }
+*/
