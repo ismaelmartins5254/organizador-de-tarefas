@@ -103,3 +103,15 @@ button{
 #res{
     display: none;
 }
+
+.item-feito{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 0;
+}
+
+.item-feito > button{
+    display: none;
+    
+}

@@ -37,7 +37,7 @@ function adicionar(){
         div.appendChild(item)
         div.appendChild(btn)
         div.appendChild(btnE)
-           
+        localStorage.setItem('arrTodos', arrTodos)
     }
     tarefa.focus()
     tarefa.value = ''
@@ -58,7 +58,6 @@ document.addEventListener('click', (e) => {
         parent.classList.toggle('feito') //toggle tira ou coloca a class 'feito'
         arrFeito.push(parent.innerHTML)
         localStorage.setItem('arrFeito', arrFeito)
-        localStorage.setItem('arrSalvo', )
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
@@ -68,41 +67,10 @@ document.addEventListener('click', (e) => {
     }
 })
 
+
 //função de busca
 
-function pesquisar(){
-    var select = document.getElementById('filtro')
-    var res = document.getElementById('res')
-    res.style.display = 'block'
-    let itemSelect = select.options[select.selectedIndex].text //pegar valor do select
 
-    let item = localStorage.getItem('item')
-    let btnE = localStorage.getItem('btnE')
-    let btn = localStorage.getItem('btn')
-    console.log(`oi ${item + btnE + btn}`)
-    console.log(`ola ${btnE}`)
-    console.log(`hello ${btn}`)
-
-    switch (itemSelect) {
-        case 'Atividades Feitas':
-            let div = document.createElement('div')
-            let span = document.createElement('span')
-            span.innerHTML = localStorage.getItem('arrSalvo')
-            res.appendChild(div)
-            div.appendChild(span)
-            break;
-
-        case 'Todos': 
-            alert("todos")
-            break
-            
-         case 'Atividades a Fazer':
-            alert('Atividades a Fazer')
-            break
-        
-        default:
-            alert('loop')
-            break;
-    }
-        
+function remover_LS(){
+    localStorage.removeItem('arrFeito')
 }
