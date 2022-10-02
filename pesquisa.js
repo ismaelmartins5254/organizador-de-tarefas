@@ -14,11 +14,7 @@ function pesquisar(){
             break
             
          case 'Atividades a Fazer':
-            let feito = localStorage.getItem('arrFeito_sRep')
-            let todos = localStorage.getItem('arrTodos')
-            let aFazer = feito + todos
-         
-            res.innerHTML = aFazer
+            res.innerHTML = 'Não sei como fazer :)'
 
             break
         
