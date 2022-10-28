@@ -5,7 +5,7 @@
 }
 
 body{
-    background: linear-gradient(50deg, #70C2E0 0%, #69EEFA 46%, #5DF0DE 100%);
+    background: linear-gradient(to right, #70C2E0 0%, #69EEFA 46%, #5DF0DE 100%);
     text-align: center;
     align-items: center;
     color: #313030;

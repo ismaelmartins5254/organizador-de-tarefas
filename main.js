@@ -21,7 +21,6 @@ function adicionar(){
         item = document.createElement('span')
         item.innerHTML = `${tarefa.value}`
         item.classList.add('texto')
-        item.id = 'i'
         btn = document.createElement('button') //botao para marcar como feito
         btn.classList.add('btn1')
         btn.innerHTML = '✔'
@@ -61,11 +60,10 @@ document.addEventListener('click', (e) => {
         if(parent.classList.contains('feito')){
             arrFeito.push(parent.innerHTML)
         }else {
-            if(arrFeito.indexOf(parent)) arrFeito.splice(arrFeito.indexOf(arrFeito))
+            if(arrFeito.indexOf(parent)) arrFeito.splice(arrFeito.indexOf(arrFeito)) //excluir do array feito após tirar a class feito  
         }
 
-        let arrFeito_sRep = [... new Set(arrFeito)]
-        localStorage.setItem('arrFeito_sRep', arrFeito_sRep)
+        
     }else if(targetEl.classList.contains('btn2')){
         arrTodos.splice(arrTodos.indexOf(targetEl)) //remove item do array 
         parent.remove()
@@ -73,9 +71,6 @@ document.addEventListener('click', (e) => {
         res.innerHTML = ''
         
     }
+        let arrFeito_sRep = [... new Set(arrFeito)] //evitar repetição no array
+        localStorage.setItem('arrFeito_sRep', arrFeito_sRep)
 })
-/*
-function remover_LS(){
-    localStorage.removeItem('arrFeito')
-}
-*/

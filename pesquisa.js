@@ -6,20 +6,29 @@ function pesquisar(){
 
     switch (itemSelect) {
         case 'Atividades Feitas':
-            res.innerHTML = localStorage.getItem('arrFeito_sRep')
+            let ArrFeito = localStorage.getItem('arrFeito_sRep')
+            if(ArrFeito.length == 0)res.innerHTML = 'marque um item como feito antes'
+            else res.innerHTML = ArrFeito
+
+
             break;
             
         case 'Todos': 
-            res.innerHTML = localStorage.getItem('arrTodos')
+            var todos = localStorage.getItem('arrTodos')
+            res.innerHTML = todos
             break
             
          case 'Atividades a Fazer':
-            res.innerHTML = 'Não sei como fazer :)'
+            let arrfeito = localStorage.getItem('arrFeito_sRep')
+            let todo = localStorage.getItem('arrTodos')
+            let arrafazer = arrfeito + todo
+            console.log(arrafazer)
+            res.innerHTML = arrafazer
 
             break
         
         default:
-            alert('ERRO[]')
+            alert('ERRO[*_*]')
             break;
     }
 }
