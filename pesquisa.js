@@ -22,7 +22,6 @@ function pesquisar(){
             let arrfeito = localStorage.getItem('arrFeito_sRep')
             let todo = localStorage.getItem('arrTodos')
             let arrafazer = arrfeito + todo
-            console.log(arrafazer)
             res.innerHTML = arrafazer
 
             break
