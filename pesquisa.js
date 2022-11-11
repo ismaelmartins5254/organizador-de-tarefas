@@ -17,15 +17,6 @@ function pesquisar(){
             var todos = localStorage.getItem('arrTodos')
             res.innerHTML = todos
             break
-            
-         case 'Atividades a Fazer':
-            let arrfeito = localStorage.getItem('arrFeito_sRep')
-            let todo = localStorage.getItem('arrTodos')
-            let arrafazer = arrfeito + todo
-            res.innerHTML = arrafazer
-
-            break
-        
         default:
             alert('ERRO[*_*]')
             break;

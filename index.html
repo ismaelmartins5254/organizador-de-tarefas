@@ -16,7 +16,7 @@
     
     <section class="addtarefa">
             <p>adicione sua tarefa:</p>
-            <input type="text" id="addtarefa" class="addtarefa" placeholder="o que você vai fazer?">
+            <input type="text" id="addtarefa" class="addtarefa" placeholder="o que você vai fazer?" autocomplete="on">
             <button onclick="adicionar()">+</button>
     </section>
 
@@ -24,7 +24,6 @@
             <select name="" id="filtro">
                 <option value="todos">Todos</option>
                 <option value="feitas" selected>Atividades Feitas</option>
-                <option value="Fazer">Atividades a Fazer</option>
             </select>
             <button onclick="pesquisar()" class="pesq">Pesquisar</button>
             <div id="res" class="item res">
