@@ -9,8 +9,6 @@ function pesquisar(){
             let ArrFeito = localStorage.getItem('arrFeito_sRep')
             if(ArrFeito.length == 0)res.innerHTML = 'marque um item como feito antes'
             else res.innerHTML = ArrFeito
-
-
             break;
             
         case 'Todos': 

@@ -8,6 +8,7 @@ var div
 
 
 function adicionar(){
+    
     var tarefa = document.getElementById('addtarefa')
     var botao = document.getElementById('btn')
     

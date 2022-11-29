@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarefas</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
-    <script src="pesquisa.js"></script>
+    <script src="main.js" defer></script>
+    <script src="pesquisa.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
     <section class="addtarefa">
             <p>adicione sua tarefa:</p>
             <input type="text" id="addtarefa" class="addtarefa" placeholder="o que você vai fazer?" autocomplete="on">
-            <button onclick="adicionar()">+</button>
+            <button onclick="adicionar()" type="button">+</button>
     </section>
 
         <section class="pesquisar">
@@ -35,7 +35,6 @@
             <div id="btn" class="atvFeita">
                 
             </div>
-            
         </section>
 </body>
 </html>
