@@ -25,7 +25,6 @@ function adicionar(){
         btn = document.createElement('button') //botao para marcar como feito
         btn.classList.add('btn1')
         btn.innerHTML = '✔'
-        
 
         btnE = document.createElement('button') //botao para excluir
         btnE.classList.add('btn2')
@@ -37,8 +36,9 @@ function adicionar(){
         div.appendChild(item)
         div.appendChild(btn)
         div.appendChild(btnE)
-        let arrTodos_sRep = [... new Set(arrTodos)]
-        localStorage.setItem('arrTodos', arrTodos_sRep)
+        let arrTodos_sRep = [... new Set(arrTodos)] //re-filtrar repetição
+        localStorage.setItem('arrTodos', arrTodos_sRep) //salvando todos os itens do array *arrTodos* no navegador
+        
     }
     tarefa.focus()
     tarefa.value = ''
@@ -70,8 +70,8 @@ document.addEventListener('click', (e) => {
         parent.remove()
         arrFeito.splice(arrFeito.indexOf(targetEl))
         res.innerHTML = ''
-        
     }
         let arrFeito_sRep = [... new Set(arrFeito)] //evitar repetição no array
         localStorage.setItem('arrFeito_sRep', arrFeito_sRep)
+        //salvando todos os itens do array *arrFeito* no navegador
 })
